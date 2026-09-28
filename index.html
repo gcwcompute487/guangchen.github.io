@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Guangchen Wang, guangch2@ualberta.ca | Mechanical Engineering Student</title>
+<meta name="description" content="Personal CV website of Guangchen Wang, Mechanical Engineering student at the University of Alberta.">
+<style>
+  :root {
+    --green: #275d38;
+    --gold: #f2cd00;
+    --ink: #1f2a24;
+    --muted: #5b6760;
+    --paper: #ffffff;
+    --tint: #f3f6f4;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0; color: var(--ink); background: var(--paper);
+    font: 17px/1.65 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  }
+  h1, h2, h3 { font-family: Georgia, "Times New Roman", serif; line-height: 1.2; margin: 0 0 .5em; }
+  a { color: var(--green); }
+
+  /* ---------- Hero ---------- */
+  /* To use your own banner: put a photo at images/hero.jpg */
+  .hero {
+    min-height: 46vh; display: flex; flex-direction: column; justify-content: flex-end;
+    padding: 2rem 1.5rem;
+    color: #fff;
+    background: linear-gradient(rgba(0,0,0,.25), rgba(0,0,0,.6)),
+                url("images/hero.jpg") center / cover no-repeat,
+                var(--green);
+  }
+  .hero h1 { font-size: clamp(2.2rem, 6vw, 4rem); margin: 0; }
+  .hero p { margin: .3rem 0 0; font-size: 1.15rem; max-width: 40rem; }
+
+  /* ---------- Tab bar ---------- */
+  nav {
+    position: sticky; top: 0; z-index: 10;
+    background: var(--paper); border-bottom: 3px solid var(--gold);
+    display: flex; flex-wrap: wrap; gap: .25rem; padding: 0 1rem;
+  }
+  nav a {
+    padding: .9rem 1rem; text-decoration: none; color: var(--ink); font-weight: 600;
+    border-bottom: 4px solid transparent; margin-bottom: -3px;
+  }
+  nav a:hover { color: var(--green); }
+  nav a.active { color: var(--green); border-bottom-color: var(--green); }
+  a:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
+
+  /* ---------- Pages ---------- */
+  main { max-width: 60rem; margin: 0 auto; padding: 2.5rem 1.5rem 4rem; }
+  section { display: none; }
+  section.active { display: block; }
+  h2 { font-size: 2rem; color: var(--green); }
+
+  .intro { display: grid; grid-template-columns: 260px 1fr; gap: 2rem; align-items: start; }
+  .photo {
+    aspect-ratio: 3 / 4; border-radius: 6px; background: var(--tint) url("images/me.jpg") center / cover no-repeat;
+  }
+  .buttons { display: flex; flex-wrap: wrap; gap: .6rem; margin-top: 1.2rem; }
+  .btn {
+    padding: .55rem 1.1rem; border: 2px solid var(--green); border-radius: 4px;
+    text-decoration: none; font-weight: 600;
+  }
+  .btn:hover { background: var(--green); color: #fff; }
+
+  /* Timeline-style entries for Education / Experience */
+  .entry { border-left: 4px solid var(--gold); padding: .2rem 0 .2rem 1.1rem; margin: 0 0 1.8rem; }
+  .entry h3 { margin: 0; font-size: 1.25rem; }
+  .entry .meta { color: var(--muted); margin: 0 0 .4rem; }
+  .entry ul { margin: .3rem 0 0; padding-left: 1.2rem; }
+
+  .cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem; }
+  .box { background: var(--tint); padding: 1.2rem 1.4rem; border-radius: 6px; }
+  .box h3 { font-size: 1.15rem; }
+  .box ul { margin: 0; padding-left: 1.2rem; }
+
+  .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-top: 1rem; }
+  .gallery img { width: 100%; border-radius: 6px; display: block; }
+
+  footer { text-align: center; color: var(--muted); font-size: .9rem; padding: 2rem 1rem; border-top: 1px solid #dde3df; }
+
+  @media (max-width: 700px) {
+    .intro { grid-template-columns: 1fr; }
+    .photo { max-width: 260px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <h1>Guangchen Wang</h1>
+  <p>Mechanical Engineering student, University of Alberta</p>
+</header>
+
+<nav id="tabs" aria-label="Main">
+  <a href="#home">Home</a>
+  <a href="#about">About Me</a>
+  <a href="#education">Education</a>
+  <a href="#experience">Experience</a>
+  <a href="#skills">Skills</a>
+  <a href="#additional">Additional</a>
+  <a href="#contact">Contact</a>
+</nav>
+
+<main>
+
+  <!-- ================= HOME ================= -->
+  <section id="home">
+    <div class="intro">
+      <div class="photo" role="img" aria-label="Photo of Guangchen Wang"></div>
+      <div>
+        <h2>Hello, I'm Guangchen Wang</h2>
+        <p>
+          Write 2 to 4 sentences here: who you are, what you're studying, what you're
+          interested in, and what you're looking for (for example, a summer internship in
+          manufacturing or design).
+        </p>
+        <p>
+          Optional objective: "Second-year Mechanical Engineering student seeking a
+          co-op position in ______."
+        </p>
+        <div class="buttons">
+          <a class="btn" href="#education">Education</a>
+          <a class="btn" href="#experience">Experience</a>
+          <a class="btn" href="#contact">Contact me</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= ABOUT ================= -->
+  <section id="about">
+    <h2>About Me</h2>
+    <p>
+      Tell your story in a few short paragraphs: where you're from, why you chose
+      engineering, and what you enjoy about it. Keep it brief and specific.
+    </p>
+    <p>
+      Add a second paragraph about who you are outside of school.
+    </p>
+  </section>
+
+  <!-- ================= EDUCATION ================= -->
+  <section id="education">
+    <h2>Education</h2>
+    <!-- Most recent first. Copy and paste an .entry block for each school. -->
+    <div class="entry">
+      <h3>BSc in Mechanical Engineering</h3>
+      <p class="meta">University of Alberta, Edmonton, AB | 2025 to present (expected 2029)</p>
+      <ul>
+        <li>Current GPA: X.X / 4.0 (optional)</li>
+        <li>Relevant courses: Statics, Calculus, Programming, Intro to Mechanical Engineering</li>
+        <li>Scholarships or awards (include the amount if you like)</li>
+      </ul>
+    </div>
+    <div class="entry">
+      <h3>High School Diploma</h3>
+      <p class="meta">Your High School, City, AB | 2022 to 2025</p>
+      <ul>
+        <li>Graduated with X% average</li>
+        <li>Honours, awards, or notable courses (Physics 30, Math 31)</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ================= EXPERIENCE ================= -->
+  <section id="experience">
+    <h2>Experience</h2>
+
+    <h3>Work</h3>
+    <div class="entry">
+      <h3>Job Title</h3>
+      <p class="meta">Company, City | Month Year to Month Year</p>
+      <ul>
+        <li>Start with an action verb and include a number, e.g. "Trained 5 new staff."</li>
+        <li>Second accomplishment</li>
+      </ul>
+    </div>
+    <!-- No work experience yet? Say so briefly and point to volunteering, projects, or clubs. -->
+
+    <h3>Volunteer</h3>
+    <div class="entry">
+      <h3>Role</h3>
+      <p class="meta">Organization | Dates</p>
+      <ul>
+        <li>What you did and the result</li>
+      </ul>
+    </div>
+
+    <h3>Projects</h3>
+    <div class="entry">
+      <h3>Project name</h3>
+      <p class="meta">Class, club, or personal | Dates</p>
+      <ul>
+        <li>What you built and which tools you used (CAD, 3D printing, Arduino)</li>
+      </ul>
+      <div class="gallery">
+        <!-- Add photos: upload to the images folder, then uncomment -->
+        <!-- <img src="images/project1.jpg" alt="Describe the photo"> -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SKILLS ================= -->
+  <section id="skills">
+    <h2>Skills</h2>
+    <div class="cols">
+      <div class="box">
+        <h3>Technical</h3>
+        <ul>
+          <li>SolidWorks / Fusion 360</li>
+          <li>MATLAB / Python</li>
+          <li>3D printing</li>
+        </ul>
+      </div>
+      <div class="box">
+        <h3>Shop &amp; hands-on</h3>
+        <ul>
+          <li>Machine shop training (MECE 200)</li>
+          <li>Soldering</li>
+        </ul>
+      </div>
+      <div class="box">
+        <h3>Professional</h3>
+        <ul>
+          <li>Teamwork</li>
+          <li>Technical writing</li>
+          <li>Languages: English, ______</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= ADDITIONAL ================= -->
+  <section id="additional">
+    <h2>Additional</h2>
+    <div class="cols">
+      <div class="box">
+        <h3>Interests</h3>
+        <ul>
+          <li>Hiking</li>
+          <li>Robotics</li>
+        </ul>
+      </div>
+      <div class="box">
+        <h3>Memberships</h3>
+        <ul>
+          <li>Engineering student society or club</li>
+        </ul>
+      </div>
+      <div class="box">
+        <h3>References</h3>
+        <p style="margin:0">Available on request.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CONTACT ================= -->
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>The best way to reach me is by email.</p>
+    <ul>
+      <li>Email: <a href="mailto:xxxxx@ualberta.ca">xxxxx@ualberta.ca</a></li>
+      <li>Phone: (xxx) xxx-xxxx</li>
+      <li>Location: Edmonton, AB</li>
+      <li>LinkedIn: <a href="https://www.linkedin.com/in/your-profile">linkedin.com/in/your-profile</a> (optional)</li>
+    </ul>
+  </section>
+
+</main>
+
+<footer>&copy; 2026 Guangchen Wang</footer>
+
+<script>
+  // Simple tabs: show the section that matches the URL hash (#education, etc.)
+  var links = document.querySelectorAll("#tabs a");
+  var sections = document.querySelectorAll("main section");
+
+  function show() {
+    var id = location.hash.replace("#", "") || "home";
+    if (!document.getElementById(id)) id = "home";
+    sections.forEach(function (s) { s.classList.toggle("active", s.id === id); });
+    links.forEach(function (a) { a.classList.toggle("active", a.getAttribute("href") === "#" + id); });
+    document.title = document.getElementById(id).querySelector("h2").textContent + " | Guangchen Wang";
+  }
+
+  window.addEventListener("hashchange", function () { show(); window.scrollTo(0, 0); });
+  show();
+</script>
+</body>
+</html>
